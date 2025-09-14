@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/dra-bruna-site' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/dra-bruna-site/' : '',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
   },

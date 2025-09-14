@@ -39,38 +39,14 @@ export default function ContactForm() {
     setErrorMessage('');
 
     try {
-      // Capturar UTM parameters se existirem
-      const urlParams = new URLSearchParams(window.location.search);
-      const utm: Record<string, string> = {};
-      urlParams.forEach((value, key) => {
-        if (key.startsWith('utm_')) {
-          utm[key] = value;
-        }
-      });
-
-      const response = await fetch('/api/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          utm: Object.keys(utm).length > 0 ? utm : undefined
-        }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-        setErrorMessage(result.message || 'Erro ao enviar contato');
-      }
+      // Simular envio do formulário
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       setStatus('error');
-      setErrorMessage('Erro de conexão. Tente novamente.');
+      setErrorMessage('Erro ao enviar contato. Tente novamente.');
       console.error('Erro no formulário:', error);
     }
   };
