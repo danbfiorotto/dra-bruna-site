@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -162,9 +163,9 @@ export default function ContactForm() {
 
           <p className="text-xs text-gray-500 text-center">
             Ao enviar este formulário, você concorda com nossa{' '}
-            <a href="/politica-privacidade" className="text-blue-600 hover:underline">
+            <Link href="/politica-privacidade" className="text-blue-600 hover:underline">
               Política de Privacidade
-            </a>
+            </Link>
             .
           </p>
         </form>

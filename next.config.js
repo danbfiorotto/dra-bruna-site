@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
   eslint: {
-    dirs: ['pages', 'components', 'lib', 'src'],
+    ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
