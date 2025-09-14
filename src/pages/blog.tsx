@@ -23,7 +23,7 @@ export default function Blog() {
     window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
   };
 
-  const handleArticleClick = (article) => {
+  const handleArticleClick = (article: any) => {
     setSelectedArticle(article);
     setIsModalOpen(true);
   };
