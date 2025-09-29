@@ -13,9 +13,20 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 
+interface Article {
+  id: number;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+}
+
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
-  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleWhatsApp = () => {
@@ -23,7 +34,7 @@ export default function Blog() {
     window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
   };
 
-  const handleArticleClick = (article: any) => {
+  const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);
     setIsModalOpen(true);
   };

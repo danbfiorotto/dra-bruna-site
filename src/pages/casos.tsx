@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import Image from 'next/image';
 import { 
   MessageCircle, 
   Eye, 
@@ -122,7 +123,17 @@ export default function Casos() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cases.map((caseItem) => (
-              <Card key={caseItem.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
+              <Card key={caseItem.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white relative">
+                {/* Logo como marca d'água */}
+                <div className="absolute top-4 right-4 opacity-10 z-10">
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="Logo" 
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
                 <div className="relative">
                   {/* Before/After Images */}
                   <div className="grid grid-cols-2 h-64">

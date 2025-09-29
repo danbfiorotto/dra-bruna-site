@@ -1,6 +1,8 @@
 import Layout from '../components/Layout';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import Image from 'next/image';
+import { useState } from 'react';
 import { 
   Sparkles, 
   Heart, 
@@ -10,20 +12,40 @@ import {
   Clock,
   Shield,
   Star,
-  CheckCircle
+  CheckCircle,
+  ChevronDown,
+  HelpCircle
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faTooth, 
+  faTools, 
+  faStethoscope, 
+  faHeart, 
+  faTrophy, 
+  faShield, 
+  faHandsHelping, 
+  faMicrochip, 
+  faHandshake 
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Tratamentos() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os tratamentos da Dra. Bruna.');
     window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+  };
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
   };
 
   const treatments = [
     {
       title: 'Tratamento de Canal',
       description: 'Procedimento especializado para remover a polpa infectada ou danificada, limpar e desinfetar o interior do dente, preservando sua estrutura natural.',
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <FontAwesomeIcon icon={faTooth} className="w-6 h-6" />,
       duration: '60-90 min',
       results: 'Permanente',
       benefits: [
@@ -37,7 +59,7 @@ export default function Tratamentos() {
     {
       title: 'Retratamento Endodôntico',
       description: 'Intervenção para casos onde o tratamento anterior não foi bem-sucedido ou quando surge uma nova infecção, devolvendo a saúde ao dente comprometido.',
-      icon: <Zap className="w-6 h-6" />,
+      icon: <FontAwesomeIcon icon={faTools} className="w-6 h-6" />,
       duration: '90-150 min',
       results: 'Permanente',
       benefits: [
@@ -51,7 +73,7 @@ export default function Tratamentos() {
     {
       title: 'Cirurgia Apical',
       description: 'Procedimento cirúrgico para remoção de infecções persistentes na raiz do dente quando o tratamento convencional não é suficiente.',
-      icon: <Award className="w-6 h-6" />,
+      icon: <FontAwesomeIcon icon={faStethoscope} className="w-6 h-6" />,
       duration: '60-90 min',
       results: 'Permanente',
       benefits: [
@@ -89,7 +111,7 @@ export default function Tratamentos() {
       description="Conheça nossos tratamentos endodônticos especializados: tratamento de canal, retratamento e cirurgia apical. Resultados seguros e duradouros."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-hero.jpg)'}}>
+      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,13 +130,13 @@ export default function Tratamentos() {
               
               {/* Subtítulo */}
               <p className="text-lg sm:text-xl text-white mb-2 sm:mb-3 font-serif">
-                Especialista em Endodontia • Microscópio Operatório
+                Especialista em Endodontia •
               </p>
               
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
                 Oferecemos uma gama completa de tratamentos endodônticos com tecnologia de ponta, 
-                incluindo microscópio operatório, sempre priorizando a preservação do dente natural, 
+                sempre priorizando a preservação do dente natural, 
                 segurança e seu bem-estar.
               </p>
               
@@ -158,7 +180,17 @@ export default function Tratamentos() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {treatments.map((treatment, index) => (
-              <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full">
+              <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full relative overflow-hidden">
+                {/* Logo como marca d'água */}
+                <div className="absolute top-4 right-4 opacity-10">
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="Logo" 
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
                 <CardContent className="p-0">
                   <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
                     {treatment.icon}
@@ -232,7 +264,7 @@ export default function Tratamentos() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
-                <Shield className="w-8 h-8" />
+                <FontAwesomeIcon icon={faMicrochip} className="w-8 h-8" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold mb-4 text-black">Tecnologia</h3>
               <p className="text-gray-700">
@@ -243,9 +275,9 @@ export default function Tratamentos() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
-                <Award className="w-8 h-8" />
+                <FontAwesomeIcon icon={faTrophy} className="w-8 h-8" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-4 text-black">Especialização</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 text-black">Excelência</h3>
               <p className="text-gray-700">
                 Especialista em Endodontia pela Faculdade São Leopoldo Mandic 
                 com mais de 10 anos de experiência em tratamentos endodônticos.
@@ -254,9 +286,9 @@ export default function Tratamentos() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
-                <Heart className="w-8 h-8" />
+                <FontAwesomeIcon icon={faHeart} className="w-8 h-8" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-4 text-black">Atendimento Humanizado</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 text-black">Humanização</h3>
               <p className="text-gray-700">
                 Cada tratamento é personalizado para suas necessidades específicas, 
                 com foco no alívio da dor e preservação do dente natural.
@@ -279,16 +311,40 @@ export default function Tratamentos() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-black">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-700">
-                    {faq.answer}
-                  </p>
+              <Card key={index} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <CardContent className="p-0">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold/20"
+                  >
+                    <div className="flex items-center space-x-3 flex-1">
+                      <HelpCircle className="w-5 h-5 text-gold flex-shrink-0" />
+                      <h3 className="text-lg sm:text-xl font-semibold text-black">
+                        {faq.question}
+                      </h3>
+                    </div>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-gold transition-transform duration-300 flex-shrink-0 ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+                  
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-6 pt-0">
+                      <div className="border-t border-gray-100 pt-4">
+                        <p className="text-gray-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}

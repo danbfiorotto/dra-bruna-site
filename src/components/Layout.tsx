@@ -15,8 +15,8 @@ interface LayoutProps {
 export default function Layout({
   children,
   title = 'Dra. Bruna - Especialista em Endodontia',
-  description = 'Dra. Bruna Torelli Soares é especialista em endodontia com vasta experiência em tratamentos de canal e endodontia microscópica. Agende sua consulta.',
-  keywords = 'endodontia, tratamento de canal, endodontia microscópica, retratamento endodôntico, cirurgia apical, Dra. Bruna',
+  description = 'Dra. Bruna Torelli Soares é especialista em endodontia com vasta experiência em tratamentos de canal. Agende sua consulta.',
+  keywords = 'endodontia, tratamento de canal, retratamento endodôntico, Dra. Bruna',
   canonical,
   ogImage = '/og-image.jpg'
 }: LayoutProps) {
@@ -55,7 +55,7 @@ export default function Layout({
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
               "name": "Dra. Bruna Torelli Soares",
-              "description": "Especialista em endodontia com vasta experiência em tratamentos de canal e endodontia microscópica",
+              "description": "Especialista em endodontia com vasta experiência em tratamentos de canal",
               "url": "https://brunatsoares.com.br",
               "telephone": "+55-11-99999-9999",
               "email": "contato@brunatsoares.com.br",

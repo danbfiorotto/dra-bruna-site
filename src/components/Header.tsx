@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   return (
@@ -26,9 +27,15 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center">
-              <span className="text-black font-bold text-sm">DB</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 flex items-center justify-center">
+              <Image 
+                src="/images/logo.png" 
+                alt="Dra. Bruna Torelli Soares - Logo" 
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-gold text-xl sm:text-2xl font-serif font-bold">
               Dra. Bruna Torelli Soares
@@ -48,8 +55,8 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center">
             <Button
               variant="outline"
               size="sm"
@@ -58,14 +65,6 @@ export default function Header() {
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp</span>
-            </Button>
-            <Button
-              size="sm"
-              onClick={handleWhatsApp}
-              className="flex items-center space-x-2 bg-gold hover:bg-gold/90 text-black"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Agendar</span>
             </Button>
           </div>
 
@@ -93,7 +92,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-800 space-y-2">
+              <div className="pt-4 border-t border-gray-800">
                 <Button
                   variant="outline"
                   size="sm"
@@ -102,14 +101,6 @@ export default function Header() {
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>WhatsApp</span>
-                </Button>
-                <Button
-                  size="sm"
-                  onClick={handleWhatsApp}
-                  className="w-full flex items-center justify-center space-x-2 bg-gold hover:bg-gold/90 text-black"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>Agendar Consulta</span>
                 </Button>
               </div>
             </nav>

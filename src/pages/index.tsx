@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -12,6 +13,18 @@ import {
   Heart,
   Sparkles
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faTooth, 
+  faTools, 
+  faStethoscope, 
+  faHeart, 
+  faTrophy, 
+  faShield, 
+  faHandsHelping, 
+  faMicrochip, 
+  faHandshake 
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const handleWhatsApp = () => {
@@ -23,22 +36,16 @@ export default function Home() {
     {
       title: 'Tratamento de Canal',
       description: 'Procedimento especializado para remover a polpa infectada ou danificada, limpar e desinfetar o interior do dente, preservando sua estrutura natural.',
-      icon: <Sparkles className="w-6 h-6" />
-    },
-    {
-      title: 'Endodontia Microscópica',
-      description: 'Utilização de microscópio operatório para visualização detalhada das estruturas internas do dente, garantindo tratamentos mais precisos e eficientes.',
-      icon: <Heart className="w-6 h-6" />
+      icon: <FontAwesomeIcon icon={faTooth} className="w-6 h-6" />
     },
     {
       title: 'Retratamento Endodôntico',
       description: 'Intervenção para casos onde o tratamento anterior não foi bem-sucedido ou quando surge uma nova infecção, devolvendo a saúde ao dente comprometido.',
-      icon: <Award className="w-6 h-6" />
+      icon: <FontAwesomeIcon icon={faTools} className="w-6 h-6" />
     }
   ];
 
   const benefits = [
-    'Microscópio operatório',
     'Técnicas modernas',
     'Ambiente acolhedor',
     'Atendimento humanizado',
@@ -52,16 +59,20 @@ export default function Home() {
       description="Dra. Bruna Torelli Soares é especialista em endodontia, oferecendo tratamentos de canal com tecnologia de ponta e abordagem humanizada. Agende sua consulta."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-hero.jpg)'}}>
-        <div className="absolute inset-0 bg-black/70"></div>
+      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-center items-center text-center">
               {/* Logo da Dra. Bruna */}
-              <div className="w-32 h-32 sm:w-auto sm:h-auto mb-6">
-                <div className="w-32 h-32 bg-gold rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-black font-bold text-4xl">DB</span>
-                </div>
+              <div className="w-24 h-24 sm:w-32 sm:h-32 mb-8 mx-auto bg-white/10 backdrop-blur-sm rounded-full p-4 shadow-2xl border border-gold/30">
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Dra. Bruna Torelli Soares - Logo" 
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-contain"
+                />
               </div>
               
               {/* Título principal */}
@@ -77,8 +88,7 @@ export default function Home() {
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
                 Tratamentos de canal com excelência, tecnologia de ponta e compromisso 
-                com o seu bem-estar. Especialista em endodontia com microscópio operatório 
-                para resultados precisos e confortáveis.
+                com o seu bem-estar. Especialista em Endodontia, trazendo resultados precisos e mais confortáveis.
               </p>
               
               {/* Botões de Ação */}
@@ -110,9 +120,11 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-12">
             <div className="w-full md:w-1/2">
-              <img 
-                src="/images/dra-bruna.jpg" 
+              <Image 
+                src="/images/dentist-profile2.jpeg" 
                 alt="Dra. Bruna Torelli Soares" 
+                width={400}
+                height={500}
                 className="rounded-lg shadow-lg w-full h-auto"
               />
             </div>
@@ -150,13 +162,23 @@ export default function Home() {
             <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Oferecemos uma gama completa de tratamentos endodônticos com tecnologia 
-              de ponta, incluindo microscópio operatório para resultados precisos e duradouros.
+              de ponta.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {treatments.map((treatment, index) => (
-              <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full">
+              <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full relative overflow-hidden">
+                {/* Logo como marca d'água */}
+                <div className="absolute top-4 right-4 opacity-10">
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="Logo" 
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
                 <CardContent className="p-0">
                   <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
                     {treatment.icon}

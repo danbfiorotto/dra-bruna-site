@@ -1,7 +1,0 @@
-<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="500" fill="#F5F5F5"/>
-<circle cx="200" cy="200" r="120" fill="#FFD700"/>
-<text x="200" y="210" font-family="Arial, sans-serif" font-size="48" fill="#000000" text-anchor="middle" font-weight="bold">DB</text>
-<text x="200" y="350" font-family="Arial, sans-serif" font-size="18" fill="#333333" text-anchor="middle">Dra. Bruna Torelli Soares</text>
-<text x="200" y="380" font-family="Arial, sans-serif" font-size="14" fill="#666666" text-anchor="middle">Especialista em Endodontia</text>
-</svg>

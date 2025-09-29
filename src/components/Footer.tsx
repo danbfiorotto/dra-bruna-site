@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram, Facebook } from 'lucide-react';
 
 export default function Footer() {
@@ -13,36 +14,32 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo e Descrição */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center">
-                <span className="text-black font-bold text-sm">DB</span>
+            <Link href="/" className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 flex items-center justify-center">
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Dra. Bruna Torelli Soares - Logo" 
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-gold text-xl font-serif font-semibold">
                 Dra. Bruna Torelli Soares
               </span>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Especialista em endodontia com vasta experiência em tratamentos de canal 
-              e endodontia microscópica para sua saúde bucal.
+              Especialista em endodontia com vasta experiência em tratamentos de canal.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com/brunatsoares"
+                href="https://instagram.com/brunatorellis"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-gold transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com/brunatsoares"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-gold transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -86,26 +83,27 @@ export default function Footer() {
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
-                  href="tel:+5511999999999"
+                  href="tel:+5515992836336"
                   className="text-gray-300 hover:text-gold transition-colors text-sm"
                 >
-                  (11) 99999-9999
+                  (15) 99283-6336
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
-                  href="mailto:contato@brunatsoares.com.br"
+                  href="mailto:dra.brunatorellisoares@hotmail.com"
                   className="text-gray-300 hover:text-gold transition-colors text-sm"
                 >
-                  contato@brunatsoares.com.br
+                  dra.brunatorellisoares@hotmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm">
-                  Av. Paulista, 1000, Conjunto 101<br />
-                  São Paulo - SP, 01310-100
+                  Rua Bernardo Guimarães 105,<br />
+                  Edifício Boulevar Alavanca<br />
+                  Sorocaba - SP, 18030-030
                 </span>
               </li>
             </ul>
@@ -119,14 +117,7 @@ export default function Footer() {
                 <Clock className="w-4 h-4 text-gold flex-shrink-0" />
                 <div className="text-gray-300 text-sm">
                   <div>Segunda a Sexta</div>
-                  <div>08:00 às 18:00</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Clock className="w-4 h-4 text-gold flex-shrink-0" />
-                <div className="text-gray-300 text-sm">
-                  <div>Sábado</div>
-                  <div>08:00 às 12:00</div>
+                  <div>09:00 às 18:00</div>
                 </div>
               </div>
             </div>

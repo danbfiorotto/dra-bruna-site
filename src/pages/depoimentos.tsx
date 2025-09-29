@@ -5,8 +5,6 @@ import {
   MessageCircle, 
   Star, 
   Quote,
-  Play,
-  Heart,
   Award,
   Users
 } from 'lucide-react';
@@ -64,7 +62,7 @@ export default function Depoimentos() {
       age: 45,
       treatment: 'Retratamento Endodôntico',
       rating: 5,
-      text: 'Fui encaminhado pelo meu dentista para um retratamento de canal complexo. A Dra. Bruna usou um microscópio durante todo o procedimento e conseguiu resolver um problema que achei que me faria perder o dente.',
+      text: 'Fui encaminhado pelo meu dentista para um retratamento de canal complexo. A Dra. Bruna conseguiu resolver um problema que achei que me faria perder o dente.',
       location: 'São Paulo, SP',
       duration: '8 meses atrás'
     },
@@ -80,28 +78,11 @@ export default function Depoimentos() {
     }
   ];
 
-  const videoTestimonials = [
-    {
-      id: 1,
-      name: 'Marina Alves',
-      treatment: 'Tratamento de Canal',
-      thumbnail: '/images/depoimentos/video-1-thumb.jpg',
-      duration: '2:30'
-    },
-    {
-      id: 2,
-      name: 'Beatriz Lima',
-      treatment: 'Endodontia Microscópica',
-      thumbnail: '/images/depoimentos/video-2-thumb.jpg',
-      duration: '1:45'
-    }
-  ];
 
   const stats = [
     { label: 'Pacientes Atendidos', value: '500+', icon: <Users className="w-6 h-6" /> },
     { label: 'Avaliação Média', value: '4.9/5', icon: <Star className="w-6 h-6" /> },
-    { label: 'Anos de Experiência', value: '10+', icon: <Award className="w-6 h-6" /> },
-    { label: 'Pacientes Satisfeitos', value: '98%', icon: <Heart className="w-6 h-6" /> }
+    { label: 'Anos de Experiência', value: '7+', icon: <Award className="w-6 h-6" /> }
   ];
 
   return (
@@ -135,9 +116,9 @@ export default function Depoimentos() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-gold">
@@ -155,57 +136,13 @@ export default function Depoimentos() {
         </div>
       </section>
 
-      {/* Video Testimonials */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center mb-3 sm:mb-4 text-black">
-              Depoimentos em Vídeo
-            </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Veja nossos pacientes contando suas experiências em primeira pessoa.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {videoTestimonials.map((video) => (
-              <Card key={video.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Play className="w-8 h-8 text-gold ml-1" />
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        {video.duration}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="font-serif font-semibold text-lg mb-2 text-black">
-                    {video.name}
-                  </h3>
-                  <p className="text-gray-700 text-sm mb-4">
-                    Tratamento: {video.treatment}
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full border-gold text-gold hover:bg-gold hover:text-black">
-                    Assistir Depoimento
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Written Testimonials */}
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center mb-3 sm:mb-4 text-black">
-              Depoimentos Escritos
+              Depoimentos
             </h2>
             <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">

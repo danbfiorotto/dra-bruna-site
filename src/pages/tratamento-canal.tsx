@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -72,7 +73,6 @@ export default function TratamentoCanal() {
 
   const advantages = [
     'Especialista em Endodontia com formação avançada',
-    'Uso de microscópio operatório para maior precisão',
     'Técnicas modernas que proporcionam mais conforto',
     'Atendimento humanizado e personalizado',
     'Consultório equipado com tecnologia de ponta'
@@ -86,7 +86,7 @@ export default function TratamentoCanal() {
     },
     {
       name: 'Carlos M.',
-      text: 'Fui encaminhado pelo meu dentista para um retratamento de canal complexo. A Dra. Bruna usou um microscópio durante todo o procedimento e conseguiu resolver um problema que achei que me faria perder o dente.',
+      text: 'Fui encaminhado pelo meu dentista para um retratamento de canal complexo. A Dra. Bruna conseguiu resolver um problema que achei que me faria perder o dente.',
       rating: 5
     },
     {
@@ -118,10 +118,10 @@ export default function TratamentoCanal() {
   return (
     <Layout
       title="Tratamento de Canal - Dra. Bruna Torelli Soares"
-      description="Tratamento de canal especializado com microscópio operatório. Preserve seu dente natural com a Dra. Bruna Torelli Soares, especialista em endodontia."
+      description="Tratamento de canal especializado. Preserve seu dente natural com a Dra. Bruna Torelli Soares, especialista em endodontia."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-hero.jpg)'}}>
+      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,13 +140,13 @@ export default function TratamentoCanal() {
               
               {/* Subtítulo */}
               <p className="text-lg sm:text-xl text-white mb-2 sm:mb-3 font-serif">
-                Especialista em Endodontia • Microscópio Operatório
+                Especialista em Endodontia • 
               </p>
               
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
                 Procedimento especializado para preservar seu dente e aliviar a dor causada 
-                por infecções ou danos à polpa dental. Com microscópio operatório e técnicas modernas.
+                por infecções ou danos à polpa dental com técnicas modernas.
               </p>
               
               {/* Botões de Ação */}
@@ -178,9 +178,11 @@ export default function TratamentoCanal() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-12">
             <div className="w-full md:w-1/2">
-              <img 
+              <Image 
                 src="/images/tratamento-canal.jpg" 
                 alt="Tratamento de Canal" 
+                width={600}
+                height={400}
                 className="rounded-lg shadow-lg w-full h-auto"
               />
             </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -10,11 +11,20 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faHeart, 
+  faTrophy, 
+  faShield, 
+  faHandsHelping, 
+  faMicrochip, 
+  faHandshake 
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Sobre() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   const qualifications = [
@@ -36,12 +46,36 @@ export default function Sobre() {
   ];
 
   const values = [
-    'Humanização: cada paciente é único e merece um atendimento personalizado',
-    'Excelência: atualização constante em cursos e congressos',
-    'Segurança: protocolos rigorosos de higiene e biossegurança',
-    'Empatia: entender as dores e ansiedades de cada pessoa',
-    'Tecnologia: uso de microscópio operatório e técnicas modernas',
-    'Compromisso: alívio da dor e qualidade de vida'
+    {
+      title: 'Humanização',
+      description: 'cada paciente é único e merece um atendimento personalizado',
+      icon: <FontAwesomeIcon icon={faHeart} className="w-6 h-6" />
+    },
+    {
+      title: 'Excelência',
+      description: 'atualização constante em cursos e congressos',
+      icon: <FontAwesomeIcon icon={faTrophy} className="w-6 h-6" />
+    },
+    {
+      title: 'Segurança',
+      description: 'protocolos rigorosos de higiene e biossegurança',
+      icon: <FontAwesomeIcon icon={faShield} className="w-6 h-6" />
+    },
+    {
+      title: 'Empatia',
+      description: 'entender as dores e ansiedades de cada pessoa',
+      icon: <FontAwesomeIcon icon={faHandsHelping} className="w-6 h-6" />
+    },
+    {
+      title: 'Tecnologia',
+      description: 'uso de radiografia digital, motor endodôntico, localizador apical e magnificação',
+      icon: <FontAwesomeIcon icon={faMicrochip} className="w-6 h-6" />
+    },
+    {
+      title: 'Compromisso',
+      description: 'alívio da dor e qualidade de vida',
+      icon: <FontAwesomeIcon icon={faHandshake} className="w-6 h-6" />
+    }
   ];
 
   const testimonials = [
@@ -63,7 +97,7 @@ export default function Sobre() {
       description="Conheça a trajetória, formação e abordagem humanizada da Dra. Bruna Torelli Soares, especialista em endodontia."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-hero.jpg)'}}>
+      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,9 +121,7 @@ export default function Sobre() {
               
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
-                Conheça a trajetória, as conquistas e a missão da especialista que dedica a vida 
-                a aliviar a dor e proporcionar qualidade de vida aos seus pacientes através de 
-                tratamentos endodônticos de excelência.
+                Conheça a trajetória, as conquistas e a missão proporcionar qualidade de vida aos seus pacientes.
               </p>
               
               {/* Botões de Ação */}
@@ -121,9 +153,11 @@ export default function Sobre() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-12">
             <div className="w-full md:w-1/2">
-              <img 
-                src="/images/dra-bruna.jpg" 
+              <Image 
+                src="/images/dentist-profile.jpg" 
                 alt="Dra. Bruna Torelli Soares" 
+                width={400}
+                height={500}
                 className="rounded-lg shadow-lg w-full h-auto"
               />
             </div>
@@ -132,17 +166,10 @@ export default function Sobre() {
                 Formação e Trajetória
               </h2>
               <p className="text-gray-700 mb-6">
-                A Dra. Bruna Torelli Soares é graduada em Odontologia e encontrou, desde cedo, 
-                sua paixão na área de Endodontia, especializando-se no tratamento de canal e em 
-                procedimentos avançados de conservação dental. Com o compromisso de se manter na 
-                vanguarda das técnicas e tecnologias, concluiu sua Especialização em Endodontia 
-                na renomada Faculdade São Leopoldo Mandic.
+              A Dra. Bruna Torelli Soares é graduada em Odontologia. Desde criança seu sonho era ser dentista, e foi em 2018 que seu sonho se tornou realidade. Durante os anos da faculdade, ela se encantou em ajudar o próximo e teve mais afinidade com a área de endodontia - tratamento de canal. Em 2020, ela fez um curso de aperfeiçoamento em endodontia. Onde teve certeza da sua paixão. Sempre em busca de mais estudos e atualizações na área, em 2022 começou a especialização em Endodontia, na renomada São Leopoldo Mandic.
               </p>
               <p className="text-gray-700 mb-6">
-                Ao longo de sua formação, a Dra. Bruna participou de diversos congressos e simpósios, 
-                tanto no Brasil quanto no exterior, buscando sempre o aprimoramento das técnicas mais 
-                modernas e eficazes. Seu objetivo é oferecer aos pacientes um atendimento humanizado, 
-                seguro e livre de dor, garantindo resultados previsíveis e duradouros.
+              Ao longo da sua formação, Dra.Bruna participou de diversos congressos e cursos, buscando sempre aprimoramento das técnicas mais modernas e suas tecnologias. Seu objetivo é oferecer aos pacientes um atendimento humanizado, seguro e livre de dor, garantindo resultados incríveis.
               </p>
               <Button 
                 variant="outline"
@@ -151,6 +178,56 @@ export default function Sobre() {
               >
                 Conheça os Valores
               </Button>
+              
+              {/* Logos de Credibilidade abaixo do texto */}
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-6">
+                  {/* Logo Mandic - Primeiro à esquerda */}
+                  <Image 
+                    src="/images/LogoMandic.png" 
+                    alt="São Leopoldo Mandic" 
+                    width={80}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
+                  
+                  {/* Logo Orocentro */}
+                  <Image 
+                    src="/images/orocentroLogo.png" 
+                    alt="Orocentro" 
+                    width={50}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
+                  
+                  {/* Logo FMU */}
+                  <Image 
+                    src="/images/LogoFMU.png" 
+                    alt="FMU - Faculdades Metropolitanas Unidas" 
+                    width={50}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
+                  
+                  {/* Logo Por um Sorriso */}
+                  <Image 
+                    src="/images/porUmSorrisoLogo.png" 
+                    alt="Por um Sorriso" 
+                    width={50}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
+                  
+                  {/* Logo CRO - Último à direita */}
+                  <Image 
+                    src="/images/LogoCRO.png" 
+                    alt="Conselho Regional de Odontologia" 
+                    width={50}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -175,13 +252,13 @@ export default function Sobre() {
               <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full">
                 <CardContent className="p-0">
                   <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
-                    <CheckCircle className="w-6 h-6" />
+                    {value.icon}
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-black text-center">
-                    {value.split(':')[0]}
+                    {value.title}
                   </h3>
                   <p className="text-gray-700 mb-6 text-center">
-                    {value.split(':')[1]}
+                    {value.description}
                   </p>
                 </CardContent>
               </Card>
@@ -190,14 +267,21 @@ export default function Sobre() {
 
           <div className="text-center mt-12">
             <div className="bg-gold/10 rounded-lg p-8 max-w-4xl mx-auto">
-              <Heart className="w-16 h-16 text-gold mx-auto mb-4" />
+              <div className="w-20 h-20 mx-auto mb-4">
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Dra. Bruna Torelli Soares - Logo" 
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <h3 className="text-2xl font-serif font-bold text-black mb-4">
-                "Cuidar da dor é devolver a qualidade de vida"
+                "Cuidar da dor do outro e salvar dentes"
               </h3>
               <p className="text-gray-700 text-lg">
                 Esse é o lema que inspira a Dra. Bruna Torelli Soares em cada atendimento. 
-                Seu objetivo é garantir que cada paciente saia do consultório livre de dores 
-                e inseguranças, retomando suas atividades diárias com tranquilidade e confiança.
+                Seu objetivo é garantir que cada paciente se sinta acolhido e saia do consultório livre de dores e inseguranças.
               </p>
             </div>
           </div>
