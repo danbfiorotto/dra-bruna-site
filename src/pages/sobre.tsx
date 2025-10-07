@@ -40,7 +40,7 @@ export default function Sobre() {
     },
     {
       title: 'Experiência',
-      description: 'Mais de 10 anos de experiência em tratamentos endodônticos',
+      description: 'Mais de 5 anos de experiência em tratamentos endodônticos',
       icon: <Users className="w-6 h-6" />
     }
   ];
@@ -97,18 +97,11 @@ export default function Sobre() {
       description="Conheça a trajetória, formação e abordagem humanizada da Dra. Bruna Torelli Soares, especialista em endodontia."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
-        <div className="absolute inset-0 bg-black/70"></div>
+      <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-center items-center text-center">
-              {/* Logo da Dra. Bruna */}
-              <div className="w-32 h-32 sm:w-auto sm:h-auto mb-6">
-                <div className="w-32 h-32 bg-gold rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-black font-bold text-4xl">DB</span>
-                </div>
-              </div>
-              
               {/* Título principal */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gold mb-2 sm:mb-3">
                 Sobre a Dra. Bruna Torelli Soares
@@ -121,7 +114,7 @@ export default function Sobre() {
               
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
-                Conheça a trajetória, as conquistas e a missão proporcionar qualidade de vida aos seus pacientes.
+                Conheça a trajetória, as conquistas e a missão de proporcionar qualidade de vida aos seus pacientes.
               </p>
               
               {/* Botões de Ação */}

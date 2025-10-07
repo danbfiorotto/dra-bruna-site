@@ -9,11 +9,9 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Sobre', href: '/sobre' },
     { name: 'Tratamentos', href: '/tratamentos' },
-    { name: 'Casos', href: '/casos' },
-    { name: 'Depoimentos', href: '/depoimentos' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Sobre', href: '/sobre' },
     { name: 'Contato', href: '/contato' },
   ];
 
@@ -42,21 +40,19 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-gold transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop Navigation + CTA Button */}
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex items-center space-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-white hover:text-gold transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
             <Button
               variant="outline"
               size="sm"

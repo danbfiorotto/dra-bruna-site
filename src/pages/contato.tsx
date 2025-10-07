@@ -34,7 +34,7 @@ export default function Contato() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'E-mail',
-      content: 'dra.brunatorellisoares@hotmail.com',
+      content: 'dra.brunatorellisoares\n@hotmail.com',
       action: () => window.open('mailto:dra.brunatorellisoares@hotmail.com'),
     },
     {
@@ -54,26 +54,48 @@ export default function Contato() {
       description="Entre em contato com a Dra. Bruna Torelli Soares para agendar sua consulta de endodontia. WhatsApp, telefone, e-mail ou visite nossa clínica em Sorocaba."
     >
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-center mb-6 text-black">
-              Entre em{' '}
-              <span className="text-gold">Contato</span>
-            </h1>
-            <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Estamos aqui para ajudar você a resolver seus problemas dentários com tratamentos 
-              endodônticos especializados. Entre em contato conosco e agende sua consulta.
-            </p>
-            <Button
-              size="lg"
-              onClick={handleWhatsApp}
-              className="flex items-center space-x-2 mx-auto bg-gold text-black hover:bg-gold/90"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Falar no WhatsApp</span>
-            </Button>
+      <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col justify-center items-center text-center">
+              
+              {/* Título principal */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gold mb-2 sm:mb-3">
+                Entre em Contato
+              </h1>
+              
+              {/* Subtítulo */}
+              <p className="text-lg sm:text-xl text-white mb-2 sm:mb-3 font-serif">
+                Agende sua Consulta • Endodontia Especializada
+              </p>
+              
+              {/* Descrição */}
+              <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
+                Estamos aqui para ajudar você a resolver seus problemas dentários com tratamentos 
+                endodônticos especializados. Entre em contato conosco e agende sua consulta.
+              </p>
+              
+              {/* Botões de Ação */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Button
+                  size="lg"
+                  onClick={handleWhatsApp}
+                  className="bg-gold hover:bg-opacity-80 text-black py-4 sm:py-6 px-6 sm:px-8 rounded flex items-center space-x-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Agendar Consulta</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border border-gold text-gold hover:bg-gold/10 py-4 sm:py-6 px-6 sm:px-8 rounded flex items-center space-x-2"
+                >
+                  <span>Ver Contatos</span>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -91,7 +113,7 @@ export default function Contato() {
                   <h3 className="font-serif font-semibold text-lg mb-2 text-black">
                     {info.title}
                   </h3>
-                  <p className="text-black font-medium mb-2">
+                  <p className="text-black font-medium mb-2 whitespace-pre-line text-sm">
                     {info.content}
                   </p>
                   <p className="text-gray-700 text-sm">

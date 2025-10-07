@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Custom404() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Estou com dificuldade para navegar no site da Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   return (
@@ -83,11 +83,11 @@ export default function Custom404() {
                   <span>Contato</span>
                 </Link>
                 <Link 
-                  href="/casos" 
+                  href="/blog" 
                   className="text-primary hover:text-primary/80 transition-colors flex items-center space-x-2"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  <span>Casos Antes/Depois</span>
+                  <span>Blog</span>
                 </Link>
               </div>
             </div>

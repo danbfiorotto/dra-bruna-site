@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram, Facebook } from '
 export default function Footer() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   return (
@@ -56,16 +56,6 @@ export default function Footer() {
               <li>
                 <Link href="/tratamentos" className="text-gray-300 hover:text-gold transition-colors text-sm">
                   Tratamentos
-                </Link>
-              </li>
-              <li>
-                <Link href="/casos" className="text-gray-300 hover:text-gold transition-colors text-sm">
-                  Casos Antes/Depois
-                </Link>
-              </li>
-              <li>
-                <Link href="/depoimentos" className="text-gray-300 hover:text-gold transition-colors text-sm">
-                  Depoimentos
                 </Link>
               </li>
               <li>

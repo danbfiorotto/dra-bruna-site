@@ -12,7 +12,7 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({
   message = 'Olá! Gostaria de agendar uma consulta com a Dra. Bruna.',
-  phone = '5511999999999',
+  phone = '5515992836336',
   variant = 'default',
   size = 'default',
   className = '',

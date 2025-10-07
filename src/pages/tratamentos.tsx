@@ -9,9 +9,7 @@ import {
   Award, 
   Zap, 
   MessageCircle,
-  Clock,
   Shield,
-  Star,
   CheckCircle,
   ChevronDown,
   HelpCircle
@@ -20,7 +18,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faTooth, 
   faTools, 
-  faStethoscope, 
   faHeart, 
   faTrophy, 
   faShield, 
@@ -34,7 +31,7 @@ export default function Tratamentos() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os tratamentos da Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   const toggleFaq = (index: number) => {
@@ -46,8 +43,6 @@ export default function Tratamentos() {
       title: 'Tratamento de Canal',
       description: 'Procedimento especializado para remover a polpa infectada ou danificada, limpar e desinfetar o interior do dente, preservando sua estrutura natural.',
       icon: <FontAwesomeIcon icon={faTooth} className="w-6 h-6" />,
-      duration: '60-90 min',
-      results: 'Permanente',
       benefits: [
         'Preserva o dente natural',
         'Alivia a dor imediatamente',
@@ -60,8 +55,6 @@ export default function Tratamentos() {
       title: 'Retratamento Endodôntico',
       description: 'Intervenção para casos onde o tratamento anterior não foi bem-sucedido ou quando surge uma nova infecção, devolvendo a saúde ao dente comprometido.',
       icon: <FontAwesomeIcon icon={faTools} className="w-6 h-6" />,
-      duration: '90-150 min',
-      results: 'Permanente',
       benefits: [
         'Salva dentes comprometidos',
         'Remove infecções persistentes',
@@ -69,18 +62,43 @@ export default function Tratamentos() {
         'Alta taxa de sucesso'
       ],
       price: 'Consulte valores'
+    }
+  ];
+
+  const commonTreatments = [
+    {
+      title: 'Profilaxia',
+      description: 'Procedimento de profilaxia para remoção de placa bacteriana, tártaro e manchas superficiais, mantendo a saúde bucal e prevenindo problemas futuros.',
+      icon: <FontAwesomeIcon icon={faShield} className="w-6 h-6" />,
+      benefits: [
+        'Remove placa e tártaro',
+        'Previne cáries e gengivite',
+        'Dentes mais limpos e saudáveis',
+        'Hálito fresco'
+      ],
+      price: 'Consulte valores'
     },
     {
-      title: 'Cirurgia Apical',
-      description: 'Procedimento cirúrgico para remoção de infecções persistentes na raiz do dente quando o tratamento convencional não é suficiente.',
-      icon: <FontAwesomeIcon icon={faStethoscope} className="w-6 h-6" />,
-      duration: '60-90 min',
-      results: 'Permanente',
+      title: 'Clareamento Dental',
+      description: 'Tratamento estético para clarear os dentes, removendo manchas e proporcionando um sorriso mais branco e atrativo.',
+      icon: <FontAwesomeIcon icon={faTrophy} className="w-6 h-6" />,
       benefits: [
-        'Remove infecções na raiz',
-        'Preserva o dente',
-        'Técnica cirúrgica precisa',
-        'Recuperação rápida'
+        'Dentes mais brancos',
+        'Melhora a autoestima',
+        'Resultado duradouro',
+        'Técnicas seguras'
+      ],
+      price: 'Consulte valores'
+    },
+    {
+      title: 'Restauração',
+      description: 'Reparo de dentes danificados por cáries ou fraturas, restaurando a função e estética dental com materiais modernos.',
+      icon: <FontAwesomeIcon icon={faHandsHelping} className="w-6 h-6" />,
+      benefits: [
+        'Restaura função mastigatória',
+        'Melhora a estética',
+        'Materiais duradouros',
+        'Protege o dente'
       ],
       price: 'Consulte valores'
     }
@@ -111,18 +129,11 @@ export default function Tratamentos() {
       description="Conheça nossos tratamentos endodônticos especializados: tratamento de canal, retratamento e cirurgia apical. Resultados seguros e duradouros."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
-        <div className="absolute inset-0 bg-black/70"></div>
+      <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-center items-center text-center">
-              {/* Logo da Dra. Bruna */}
-              <div className="w-32 h-32 sm:w-auto sm:h-auto mb-6">
-                <div className="w-32 h-32 bg-gold rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-black font-bold text-4xl">DB</span>
-                </div>
-              </div>
-              
               {/* Título principal */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gold mb-2 sm:mb-3">
                 Tratamentos Endodônticos
@@ -130,14 +141,13 @@ export default function Tratamentos() {
               
               {/* Subtítulo */}
               <p className="text-lg sm:text-xl text-white mb-2 sm:mb-3 font-serif">
-                Especialista em Endodontia •
+                Especialista em Endodontia • Tecnologia de Ponta
               </p>
               
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
                 Oferecemos uma gama completa de tratamentos endodônticos com tecnologia de ponta, 
-                sempre priorizando a preservação do dente natural, 
-                segurança e seu bem-estar.
+                sempre priorizando a preservação do dente natural, segurança e seu bem-estar.
               </p>
               
               {/* Botões de Ação */}
@@ -178,7 +188,7 @@ export default function Tratamentos() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {treatments.map((treatment, index) => (
               <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full relative overflow-hidden">
                 {/* Logo como marca d'água */}
@@ -201,23 +211,73 @@ export default function Tratamentos() {
                   <p className="text-gray-700 mb-6 text-center">
                     {treatment.description}
                   </p>
-                  
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4 text-gold" />
-                      <div>
-                        <div className="text-sm text-gray-600">Duração</div>
-                        <div className="font-medium text-black">{treatment.duration}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-gold" />
-                      <div>
-                        <div className="text-sm text-gray-600">Resultados</div>
-                        <div className="font-medium text-black">{treatment.results}</div>
-                      </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3 text-black">Benefícios:</h4>
+                    <div className="space-y-2">
+                      {treatment.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-gold flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{benefit}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
+
+                  <div className="mt-auto text-center">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={handleWhatsApp}
+                      className="text-gold hover:text-black font-medium inline-flex items-center"
+                    >
+                      Saiba mais
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Common Treatments */}
+      <section className="py-16 sm:py-20 bg-light-gray">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center mb-3 sm:mb-4 text-black">
+              Tratamentos Comuns
+            </h2>
+            <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Cuidados preventivos e tratamentos estéticos para manter sua saúde bucal 
+              e seu sorriso sempre bonito.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {commonTreatments.map((treatment, index) => (
+              <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full relative overflow-hidden">
+                {/* Logo como marca d'água */}
+                <div className="absolute top-4 right-4 opacity-10">
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="Logo" 
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
+                    {treatment.icon}
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-black text-center">
+                    {treatment.title}
+                  </h3>
+                  <p className="text-gray-700 mb-6 text-center">
+                    {treatment.description}
+                  </p>
 
                   <div className="mb-6">
                     <h4 className="font-semibold mb-3 text-black">Benefícios:</h4>
@@ -249,7 +309,7 @@ export default function Tratamentos() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 sm:py-20 bg-light-gray">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center mb-3 sm:mb-4 text-black">
@@ -280,7 +340,7 @@ export default function Tratamentos() {
               <h3 className="text-lg sm:text-xl font-semibold mb-4 text-black">Excelência</h3>
               <p className="text-gray-700">
                 Especialista em Endodontia pela Faculdade São Leopoldo Mandic 
-                com mais de 10 anos de experiência em tratamentos endodônticos.
+                com mais de 5 anos de experiência em tratamentos endodônticos.
               </p>
             </div>
 
@@ -299,7 +359,7 @@ export default function Tratamentos() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-light-gray">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center mb-3 sm:mb-4 text-black">

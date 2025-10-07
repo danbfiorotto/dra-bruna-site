@@ -1,12 +1,7 @@
 import Layout from '../components/Layout';
-import { Button } from '../components/ui/button';
-import { MessageCircle, FileText, Scale, AlertTriangle, CheckCircle } from 'lucide-react';
+import { FileText, Scale, AlertTriangle, CheckCircle } from 'lucide-react';
 
 export default function TermosUso() {
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent('Olá! Tenho dúvidas sobre os termos de uso da Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
-  };
 
   return (
     <Layout
@@ -14,23 +9,29 @@ export default function TermosUso() {
       description="Conheça os termos e condições de uso dos serviços da Dra. Bruna. Transparência e clareza em nossos serviços."
     >
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FileText className="w-8 h-8 text-primary" />
+      <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col justify-center items-center text-center">
+              
+              {/* Título principal */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gold mb-2 sm:mb-3">
+                Termos de Uso
+              </h1>
+              
+              {/* Subtítulo */}
+              <p className="text-lg sm:text-xl text-white mb-2 sm:mb-3 font-serif">
+                Condições de Uso • Transparência e Clareza
+              </p>
+              
+              {/* Descrição */}
+              <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
+                Estes termos estabelecem as condições de uso dos nossos serviços. 
+                Leia atentamente antes de utilizar nossos serviços.
+              </p>
+              
             </div>
-            <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-6">
-              Termos de{' '}
-              <span className="text-primary">Uso</span>
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Estes termos estabelecem as condições de uso dos nossos serviços. 
-              Leia atentamente antes de utilizar nossos serviços.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Última atualização: {new Date().toLocaleDateString('pt-BR')}
-            </p>
           </div>
         </div>
       </section>
@@ -61,15 +62,19 @@ export default function TermosUso() {
               </h2>
               <div className="text-muted-foreground space-y-4">
                 <p>
-                  A Dra. Bruna oferece os seguintes serviços:
+                  Este site é de caráter informativo e institucional. A Dra. Bruna Torelli Soares oferece:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Consultas médicas especializadas em dermatologia e estética</li>
-                  <li>Tratamentos estéticos não invasivos e minimamente invasivos</li>
-                  <li>Orientações sobre cuidados com a pele</li>
-                  <li>Procedimentos de rejuvenescimento facial</li>
-                  <li>Acompanhamento pós-tratamento</li>
+                  <li>Informações sobre tratamentos endodônticos</li>
+                  <li>Orientações sobre saúde bucal e endodontia</li>
+                  <li>Conteúdo educativo sobre tratamentos de canal</li>
+                  <li>Canal de contato via WhatsApp para esclarecimentos</li>
+                  <li>Informações sobre localização e horários de atendimento</li>
                 </ul>
+                <p className="font-semibold text-foreground">
+                  ⚠️ Importante: Este site não substitui consulta presencial. Diagnósticos e tratamentos 
+                  só podem ser realizados em consulta odontológica presencial.
+                </p>
               </div>
             </div>
 
@@ -83,86 +88,85 @@ export default function TermosUso() {
                   É importante entender que:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Os resultados dos tratamentos podem variar de pessoa para pessoa</li>
-                  <li>Não garantimos resultados específicos</li>
-                  <li>É necessário seguir todas as orientações pós-tratamento</li>
-                  <li>Alguns tratamentos podem ter contraindicações</li>
-                  <li>É obrigatória a consulta prévia para avaliação individual</li>
+                  <li>As informações do site são de caráter geral e educativo</li>
+                  <li>Não substituem avaliação clínica e radiográfica presencial</li>
+                  <li>Cada caso deve ser avaliado individualmente</li>
+                  <li>Os resultados dos tratamentos podem variar conforme cada paciente</li>
+                  <li>É obrigatória consulta presencial para diagnóstico e tratamento</li>
+                  <li>O contato via WhatsApp é apenas para esclarecimentos gerais</li>
                 </ul>
               </div>
             </div>
 
             <div className="mb-12">
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
-                4. Agendamento e Cancelamentos
+                4. Contato e Comunicação
               </h2>
               <div className="text-muted-foreground space-y-4">
                 <p>
-                  Para agendamentos e cancelamentos:
+                  Para contato e comunicação:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Agendamentos devem ser feitos com antecedência mínima de 24 horas</li>
-                  <li>Cancelamentos devem ser comunicados com pelo menos 24 horas de antecedência</li>
-                  <li>Faltas sem aviso prévio podem resultar em cobrança de taxa</li>
-                  <li>Reagendamentos são permitidos conforme disponibilidade</li>
-                  <li>Horários são respeitados rigorosamente</li>
+                  <li>O WhatsApp é utilizado apenas para esclarecimentos gerais</li>
+                  <li>Informações de saúde via WhatsApp são limitadas e não substituem consulta</li>
+                  <li>Horário de atendimento: Segunda a Sexta, 09:00 às 18:00</li>
                 </ul>
               </div>
             </div>
 
             <div className="mb-12">
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
-                5. Pagamentos e Reembolsos
+                5. Uso do Site
               </h2>
               <div className="text-muted-foreground space-y-4">
                 <p>
-                  Sobre pagamentos:
+                  Ao utilizar este site, você concorda em:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Pagamentos podem ser feitos à vista ou parcelados</li>
-                  <li>Aceitamos cartões de crédito, débito e PIX</li>
-                  <li>Preços podem ser alterados sem aviso prévio</li>
-                  <li>Reembolsos são avaliados caso a caso</li>
-                  <li>Taxas de cancelamento podem ser aplicadas</li>
+                  <li>Não utilizar o site para fins ilegais ou não autorizados</li>
+                  <li>Não tentar acessar áreas restritas do site</li>
+                  <li>Não interferir no funcionamento normal do site</li>
+                  <li>Respeitar os direitos de propriedade intelectual</li>
+                  <li>Fornecer informações verdadeiras quando solicitado</li>
                 </ul>
               </div>
             </div>
 
             <div className="mb-12">
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
-                6. Confidencialidade Médica
+                6. Confidencialidade Odontológica
               </h2>
               <div className="text-muted-foreground space-y-4">
                 <p>
-                  Respeitamos rigorosamente o sigilo médico:
+                  Respeitamos rigorosamente o sigilo odontológico:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Todas as informações médicas são confidenciais</li>
+                  <li>Todas as informações odontológicas são confidenciais</li>
                   <li>Dados são compartilhados apenas com seu consentimento</li>
-                  <li>Prontuários são mantidos em segurança</li>
-                  <li>Fotos são utilizadas apenas com autorização expressa</li>
-                  <li>Equipe é treinada em confidencialidade</li>
+                  <li>Prontuários odontológicos são mantidos em segurança</li>
+                  <li>Exames radiográficos são utilizados apenas com autorização expressa</li>
+                  <li>Informações via WhatsApp são tratadas com confidencialidade</li>
                 </ul>
               </div>
             </div>
 
             <div className="mb-12">
               <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
-                7. Contraindicações e Riscos
+                7. Limitações do Conteúdo
               </h2>
               <div className="text-muted-foreground space-y-4">
                 <p>
-                  Alguns tratamentos podem ter contraindicações:
+                  É importante entender as limitações do conteúdo do site:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Gravidez e amamentação</li>
-                  <li>Doenças autoimunes</li>
-                  <li>Uso de medicamentos específicos</li>
-                  <li>Histórico de alergias</li>
-                  <li>Condições de pele específicas</li>
+                  <li>As informações são de caráter geral e educativo</li>
+                  <li>Não constituem diagnóstico ou prescrição de tratamento</li>
+                  <li>Cada caso clínico é único e requer avaliação individual</li>
+                  <li>Exames radiográficos são essenciais para diagnóstico preciso</li>
+                  <li>Histórico médico completo deve ser avaliado presencialmente</li>
                 </ul>
                 <p>
-                  É fundamental informar todas as condições de saúde durante a consulta.
+                  É fundamental buscar avaliação odontológica presencial para qualquer problema de saúde bucal.
                 </p>
               </div>
             </div>
@@ -204,7 +208,7 @@ export default function TermosUso() {
               <div className="text-muted-foreground space-y-4">
                 <p>
                   Estes termos são regidos pelas leis brasileiras. Qualquer disputa será 
-                  resolvida nos tribunais competentes de São Paulo, SP.
+                  resolvida nos tribunais competentes de Sorocaba, SP.
                 </p>
               </div>
             </div>
@@ -218,9 +222,9 @@ export default function TermosUso() {
                   Para dúvidas sobre estes termos, entre em contato:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>E-mail: contato@drabrura.com.br</li>
-                  <li>Telefone: (11) 99999-9999</li>
-                  <li>Endereço: Rua das Flores, 123 - São Paulo, SP</li>
+                  <li>E-mail: dra.brunatorellisoares@hotmail.com</li>
+                  <li>Telefone: (15) 99283-6336</li>
+                  <li>Endereço: Rua Bernardo Guimarães 105, Edifício Boulevar Alavanca - Sorocaba, SP - 18030-030</li>
                 </ul>
               </div>
             </div>
@@ -229,27 +233,6 @@ export default function TermosUso() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6">
-            Dúvidas sobre os Termos?
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Estamos aqui para esclarecer qualquer dúvida sobre nossos termos e condições.
-          </p>
-          
-          <Button
-            size="lg"
-            variant="secondary"
-            onClick={handleWhatsApp}
-            className="flex items-center space-x-2 mx-auto"
-          >
-            <MessageCircle className="w-5 h-5" />
-            <span>Falar no WhatsApp</span>
-          </Button>
-        </div>
-      </section>
     </Layout>
   );
 }

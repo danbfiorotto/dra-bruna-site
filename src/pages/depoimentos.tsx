@@ -12,7 +12,7 @@ import {
 export default function Depoimentos() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   const testimonials = [
@@ -82,7 +82,7 @@ export default function Depoimentos() {
   const stats = [
     { label: 'Pacientes Atendidos', value: '500+', icon: <Users className="w-6 h-6" /> },
     { label: 'Avaliação Média', value: '4.9/5', icon: <Star className="w-6 h-6" /> },
-    { label: 'Anos de Experiência', value: '7+', icon: <Award className="w-6 h-6" /> }
+    { label: 'Anos de Experiência', value: '5+', icon: <Award className="w-6 h-6" /> }
   ];
 
   return (

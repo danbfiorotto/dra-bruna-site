@@ -29,19 +29,31 @@ import {
 export default function Home() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   const treatments = [
     {
       title: 'Tratamento de Canal',
       description: 'Procedimento especializado para remover a polpa infectada ou danificada, limpar e desinfetar o interior do dente, preservando sua estrutura natural.',
-      icon: <FontAwesomeIcon icon={faTooth} className="w-6 h-6" />
+      icon: <FontAwesomeIcon icon={faTooth} className="w-6 h-6" />,
+      benefits: [
+        'Preserva o dente natural',
+        'Alivia a dor imediatamente',
+        'Previne infecções futuras',
+        'Técnicas modernas e confortáveis'
+      ]
     },
     {
       title: 'Retratamento Endodôntico',
       description: 'Intervenção para casos onde o tratamento anterior não foi bem-sucedido ou quando surge uma nova infecção, devolvendo a saúde ao dente comprometido.',
-      icon: <FontAwesomeIcon icon={faTools} className="w-6 h-6" />
+      icon: <FontAwesomeIcon icon={faTools} className="w-6 h-6" />,
+      benefits: [
+        'Salva dentes comprometidos',
+        'Remove infecções persistentes',
+        'Técnicas avançadas',
+        'Alta taxa de sucesso'
+      ]
     }
   ];
 
@@ -59,21 +71,11 @@ export default function Home() {
       description="Dra. Bruna Torelli Soares é especialista em endodontia, oferecendo tratamentos de canal com tecnologia de ponta e abordagem humanizada. Agende sua consulta."
     >
       {/* Hero Section */}
-      <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-center items-center text-center">
-              {/* Logo da Dra. Bruna */}
-              <div className="w-24 h-24 sm:w-32 sm:h-32 mb-8 mx-auto bg-white/10 backdrop-blur-sm rounded-full p-4 shadow-2xl border border-gold/30">
-                <Image 
-                  src="/images/logo.png" 
-                  alt="Dra. Bruna Torelli Soares - Logo" 
-                  width={128}
-                  height={128}
-                  className="w-full h-full object-contain"
-                />
-              </div>
               
               {/* Título principal */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gold mb-2 sm:mb-3">
@@ -166,7 +168,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {treatments.map((treatment, index) => (
               <Card key={index} className="bg-white rounded-lg shadow-lg p-5 sm:p-6 border-t-4 border-gold hover:shadow-xl transition-shadow flex flex-col h-full relative overflow-hidden">
                 {/* Logo como marca d'água */}
@@ -189,14 +191,27 @@ export default function Home() {
                   <p className="text-gray-700 mb-6 text-center">
                     {treatment.description}
                   </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3 text-black">Benefícios:</h4>
+                    <div className="space-y-2">
+                      {treatment.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-gold flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   <div className="mt-auto text-center">
                     <Button 
                       variant="outline" 
                       size="sm"
+                      onClick={handleWhatsApp}
                       className="text-gold hover:text-black font-medium inline-flex items-center"
                     >
                       Saiba mais
-                      <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
                   </div>
                 </CardContent>

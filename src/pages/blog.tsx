@@ -31,7 +31,7 @@ export default function Blog() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
   };
 
   const handleArticleClick = (article: Article) => {
@@ -156,26 +156,48 @@ export default function Blog() {
       description="Acompanhe artigos especializados sobre endodontia, tratamentos de canal e saúde bucal. Conteúdo educativo da Dra. Bruna Torelli Soares, especialista em endodontia."
     >
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-center mb-6 text-black">
-              Blog e{' '}
-              <span className="text-gold">Artigos</span>
-            </h1>
-            <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Acompanhe artigos educativos sobre tratamentos endodônticos, cuidados com a saúde bucal 
-              e dicas de saúde.
-            </p>
-            <Button
-              size="lg"
-              onClick={handleWhatsApp}
-              className="flex items-center space-x-2 mx-auto bg-gold text-black hover:bg-gold/90"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Agendar Consulta</span>
-            </Button>
+      <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col justify-center items-center text-center">
+              
+              {/* Título principal */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gold mb-2 sm:mb-3">
+                Blog e Artigos
+              </h1>
+              
+              {/* Subtítulo */}
+              <p className="text-lg sm:text-xl text-white mb-2 sm:mb-3 font-serif">
+                Conteúdo Educativo • Endodontia e Saúde Bucal
+              </p>
+              
+              {/* Descrição */}
+              <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
+                Acompanhe artigos educativos sobre tratamentos endodônticos, cuidados com a saúde bucal 
+                e dicas de saúde.
+              </p>
+              
+              {/* Botões de Ação */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Button
+                  size="lg"
+                  onClick={handleWhatsApp}
+                  className="bg-gold hover:bg-opacity-80 text-black py-4 sm:py-6 px-6 sm:px-8 rounded flex items-center space-x-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Agendar Consulta</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => document.getElementById('artigos')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border border-gold text-gold hover:bg-gold/10 py-4 sm:py-6 px-6 sm:px-8 rounded flex items-center space-x-2"
+                >
+                  <span>Ver Artigos</span>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
