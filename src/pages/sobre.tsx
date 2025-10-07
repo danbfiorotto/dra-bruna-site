@@ -8,8 +8,7 @@ import {
   Heart, 
   Users, 
   MessageCircle,
-  CheckCircle,
-  Star
+  CheckCircle
 } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -78,18 +77,6 @@ export default function Sobre() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: 'Mariana Silva',
-      text: 'Sempre tive medo de fazer tratamento de canal, mas a Dra. Bruna me deixou totalmente à vontade e o procedimento foi muito mais tranquilo do que imaginei. Profissional excepcional!',
-      rating: 5
-    },
-    {
-      name: 'Dr. Ricardo Mendes',
-      text: 'Como dentista, sempre encaminho meus casos de endodontia para a Dra. Bruna. Sua competência técnica é impressionante e meus pacientes sempre voltam extremamente satisfeitos.',
-      rating: 5
-    }
-  ];
 
   return (
     <Layout
@@ -281,40 +268,6 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Depoimentos Section */}
-      <section className="py-16 sm:py-20 bg-light-gray">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center mb-3 sm:mb-4 text-black">
-              Depoimentos
-            </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              A satisfação e confiança dos nossos pacientes é nossa maior recompensa.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white p-5 sm:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-0">
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-gold fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 italic mb-4 sm:mb-6 text-sm sm:text-base">
-                    "{testimonial.text}"
-                  </p>
-                  <div className="font-semibold text-black">
-                    - {testimonial.name}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="bg-black py-16 sm:py-20">
