@@ -2,6 +2,9 @@ import Head from 'next/head';
 import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import GoogleAnalytics from './analytics/GoogleAnalytics';
+import GoogleTagManager from './analytics/GoogleTagManager';
+import FacebookPixel from './analytics/FacebookPixel';
 
 interface LayoutProps {
   children: ReactNode;
@@ -79,6 +82,11 @@ export default function Layout({
             })
           }}
         />
+        
+        {/* Analytics Components */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FB_PIXEL_ID} />
       </Head>
       
       <div className="min-h-screen flex flex-col">

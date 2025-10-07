@@ -8,6 +8,7 @@ import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { trackFormSubmission } from '@/lib/analytics';
 
 interface ContactFormData {
   name: string;
@@ -65,6 +66,13 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
+        
+        // Track successful form submission
+        trackFormSubmission('contact', {
+          name: formData.name,
+          email: formData.email,
+          message_length: formData.message.length,
+        });
       } else {
         setStatus('error');
         setErrorMessage(result.message || 'Erro ao enviar contato');

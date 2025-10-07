@@ -12,11 +12,15 @@ import {
   Heart,
   Award
 } from 'lucide-react';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export default function TratamentoCanal() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta para tratamento de canal com a Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('tratamento_canal_cta');
   };
 
   const symptoms = [

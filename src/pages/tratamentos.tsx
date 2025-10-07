@@ -25,6 +25,7 @@ import {
   faMicrochip, 
   faHandshake 
 } from '@fortawesome/free-solid-svg-icons';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export default function Tratamentos() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -32,6 +33,9 @@ export default function Tratamentos() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os tratamentos da Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('tratamentos_cta');
   };
 
   const toggleFaq = (index: number) => {

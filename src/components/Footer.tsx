@@ -1,11 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram, Facebook } from 'lucide-react';
+import { trackWhatsAppClick, trackPhoneClick, trackEmailClick } from '@/lib/analytics';
 
 export default function Footer() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('footer');
+  };
+
+  const handlePhoneClick = () => {
+    trackPhoneClick('(15) 99283-6336');
+  };
+
+  const handleEmailClick = () => {
+    trackEmailClick('dra.brunatorellisoares@hotmail.com');
   };
 
   return (
@@ -74,6 +86,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="tel:+5515992836336"
+                  onClick={handlePhoneClick}
                   className="text-gray-300 hover:text-gold transition-colors text-sm"
                 >
                   (15) 99283-6336
@@ -83,6 +96,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="mailto:dra.brunatorellisoares@hotmail.com"
+                  onClick={handleEmailClick}
                   className="text-gray-300 hover:text-gold transition-colors text-sm"
                 >
                   dra.brunatorellisoares@hotmail.com

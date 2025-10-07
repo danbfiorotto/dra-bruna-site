@@ -25,11 +25,21 @@ import {
   faMicrochip, 
   faHandshake 
 } from '@fortawesome/free-solid-svg-icons';
+import { trackWhatsAppClick, trackContentView } from '@/lib/analytics';
 
 export default function Home() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('home_cta');
+  };
+
+  const handleViewTreatments = () => {
+    // Track content view
+    trackContentView('todos_tratamentos', 'navigation');
+    window.location.href = '/tratamentos';
   };
 
   const treatments = [
@@ -222,7 +232,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Button
               size="lg"
-              onClick={() => window.location.href = '/tratamentos'}
+              onClick={handleViewTreatments}
               className="flex items-center space-x-2 mx-auto bg-gold hover:bg-opacity-80 text-black"
             >
               <span>Ver Todos os Tratamentos</span>

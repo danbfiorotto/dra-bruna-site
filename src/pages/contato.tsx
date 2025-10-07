@@ -8,12 +8,22 @@ import {
   MapPin, 
   Clock
 } from 'lucide-react';
+import { trackWhatsAppClick, trackCustomEvent } from '@/lib/analytics';
 
 export default function Contato() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('contato_cta');
+  };
+
+  const handleViewContacts = () => {
+    // Track scroll to contacts
+    trackCustomEvent('contato_scroll_to_contacts', {});
+    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const contactInfo = [
@@ -89,7 +99,7 @@ export default function Contato() {
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={handleViewContacts}
                   className="border border-gold text-gold hover:bg-gold/10 py-4 sm:py-6 px-6 sm:px-8 rounded flex items-center space-x-2"
                 >
                   <span>Ver Contatos</span>

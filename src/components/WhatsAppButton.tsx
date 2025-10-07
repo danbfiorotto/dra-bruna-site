@@ -1,5 +1,6 @@
 import { Button } from './ui/button';
 import { MessageCircle } from 'lucide-react';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 interface WhatsAppButtonProps {
   message?: string;
@@ -8,6 +9,7 @@ interface WhatsAppButtonProps {
   size?: 'default' | 'sm' | 'lg' | 'icon';
   className?: string;
   children?: React.ReactNode;
+  source?: string; // Para tracking
 }
 
 export default function WhatsAppButton({
@@ -16,12 +18,16 @@ export default function WhatsAppButton({
   variant = 'default',
   size = 'default',
   className = '',
-  children
+  children,
+  source = 'whatsapp_button'
 }: WhatsAppButtonProps) {
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick(source);
   };
 
   return (

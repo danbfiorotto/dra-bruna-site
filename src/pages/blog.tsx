@@ -12,6 +12,7 @@ import {
   X
 } from 'lucide-react';
 import { useState } from 'react';
+import { trackWhatsAppClick, trackContentView, trackCustomEvent } from '@/lib/analytics';
 
 interface Article {
   id: number;
@@ -32,11 +33,38 @@ export default function Blog() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('blog_hero');
   };
 
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);
     setIsModalOpen(true);
+    
+    // Track article view
+    trackContentView(article.title, 'blog_article');
+    trackCustomEvent('blog_article_open', {
+      article_id: article.id,
+      article_title: article.title,
+      article_category: article.category,
+      read_time: article.readTime,
+    });
+  };
+
+  const handleCategoryFilter = (category: string) => {
+    setSelectedCategory(category);
+    
+    // Track category filter
+    trackCustomEvent('blog_category_filter', {
+      category: category,
+    });
+  };
+
+  const handleViewArticles = () => {
+    // Track scroll to articles
+    trackCustomEvent('blog_scroll_to_articles', {});
+    document.getElementById('artigos')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleCloseModal = () => {
@@ -191,7 +219,7 @@ export default function Blog() {
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={() => document.getElementById('artigos')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={handleViewArticles}
                   className="border border-gold text-gold hover:bg-gold/10 py-4 sm:py-6 px-6 sm:px-8 rounded flex items-center space-x-2"
                 >
                   <span>Ver Artigos</span>
@@ -275,7 +303,7 @@ export default function Blog() {
                 key={category}
                 variant={selectedCategory === category ? 'default' : 'outline'}
                 size="sm"
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryFilter(category)}
                 className={`flex items-center space-x-2 ${
                   selectedCategory === category 
                     ? 'bg-gold text-black hover:bg-gold/90' 
@@ -291,7 +319,7 @@ export default function Blog() {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section id="artigos" className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.filter(article => !article.featured).map((article) => (

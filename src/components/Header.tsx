@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +19,9 @@ export default function Header() {
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Bruna.');
     window.open(`https://wa.me/5515992836336?text=${message}`, '_blank');
+    
+    // Track WhatsApp click
+    trackWhatsAppClick('header');
   };
 
   return (
