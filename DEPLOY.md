@@ -4,7 +4,7 @@
 
 O site está **100% pronto** para deploy! Todas as funcionalidades foram implementadas:
 
-- ✅ **Páginas Completas**: Home, Sobre, Tratamentos, Casos, Depoimentos, Blog, Contato, Políticas
+- ✅ **Páginas Completas**: Home, Sobre, Tratamentos, Blog, Contato, Políticas
 - ✅ **SEO Otimizado**: Schema.org, sitemap.xml, robots.txt, meta tags
 - ✅ **Design Responsivo**: Mobile-first, otimizado para todos os dispositivos
 - ✅ **Performance**: Build otimizado, CSS inlined, lazy loading
@@ -128,8 +128,6 @@ Se usar Netlify, o formulário funcionará automaticamente:
 **Páginas para personalizar**:
 - `src/pages/sobre.tsx` - Informações da Dra. Bruna
 - `src/pages/tratamentos.tsx` - Lista de tratamentos
-- `src/pages/casos.tsx` - Casos reais (adicionar imagens)
-- `src/pages/depoimentos.tsx` - Depoimentos reais
 - `src/pages/blog.tsx` - Artigos e posts
 
 ### 3. Imagens
@@ -137,7 +135,6 @@ Se usar Netlify, o formulário funcionará automaticamente:
 **Adicionar imagens**:
 - Logo da clínica
 - Fotos da Dra. Bruna
-- Casos antes/depois
 - Imagens dos tratamentos
 - Favicon personalizado
 

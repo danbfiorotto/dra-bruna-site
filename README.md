@@ -54,8 +54,6 @@ dra-bruna-site/
 - **Sobre** - Informações sobre a Dra. Bruna
 - **Tratamentos** - Lista de tratamentos oferecidos
 - **Tratamento de Canal** - Página específica sobre canal
-- **Casos** - Galeria de casos antes/depois
-- **Depoimentos** - Vídeos de depoimentos
 - **Blog** - Artigos sobre endodontia
 - **Contato** - Formulário de contato
 

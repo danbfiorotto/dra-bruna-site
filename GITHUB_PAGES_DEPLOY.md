@@ -9,8 +9,6 @@
   - `/images/dra-bruna.jpg` - Foto da Dra. Bruna
   - `/images/tratamento-canal.jpg` - Imagem do tratamento
   - `/images/blog/*.jpg` - Imagens dos artigos do blog
-  - `/images/casos/*.jpg` - Imagens dos casos antes/depois
-  - `/images/depoimentos/*.jpg` - Thumbnails dos vídeos
   - `/og-image.jpg` - Imagem para redes sociais
 
 ### 2. **Configuração do GitHub Pages**
@@ -122,8 +120,6 @@ Após o deploy, verifique se:
 - **Sobre**: `https://danbfiorotto.github.io/dra-bruna-site/sobre/`
 - **Tratamentos**: `https://danbfiorotto.github.io/dra-bruna-site/tratamentos/`
 - **Blog**: `https://danbfiorotto.github.io/dra-bruna-site/blog/`
-- **Casos**: `https://danbfiorotto.github.io/dra-bruna-site/casos/`
-- **Depoimentos**: `https://danbfiorotto.github.io/dra-bruna-site/depoimentos/`
 - **Contato**: `https://danbfiorotto.github.io/dra-bruna-site/contato/`
 
 ## Próximos Passos

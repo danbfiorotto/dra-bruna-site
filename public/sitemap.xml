@@ -25,18 +25,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://brunatorelli.com.br/casos/</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://brunatorelli.com.br/depoimentos/</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://brunatorelli.com.br/blog/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>

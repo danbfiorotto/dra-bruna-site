@@ -16,8 +16,6 @@ Disallow: /api/
 Allow: /
 Allow: /sobre/
 Allow: /tratamentos/
-Allow: /casos/
-Allow: /depoimentos/
 Allow: /blog/
 Allow: /contato/
 
