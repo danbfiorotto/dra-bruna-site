@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import { useEffect } from 'react';
 import '@/styles/globals.css';
 import { initPerformanceOptimizations } from '@/lib/performance';
+import useServiceWorker from '@/hooks/useServiceWorker';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,6 +22,9 @@ const playfair = Playfair_Display({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  // Registrar Service Worker
+  useServiceWorker();
+
   useEffect(() => {
     // Initialize performance optimizations
     initPerformanceOptimizations();

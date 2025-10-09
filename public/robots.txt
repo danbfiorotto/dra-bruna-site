@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://drabrura.com.br/sitemap.xml
+Sitemap: https://brunatorelli.com.br/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

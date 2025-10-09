@@ -7,6 +7,7 @@ export default function PoliticaPrivacidade() {
     <Layout
       title="Política de Privacidade"
       description="Conheça nossa política de privacidade e como protegemos seus dados pessoais. Transparência e segurança em primeiro lugar."
+      canonical="https://brunatorelli.com.br/politica-privacidade/"
     >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>

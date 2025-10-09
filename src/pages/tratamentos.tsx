@@ -26,6 +26,7 @@ import {
   faHandshake 
 } from '@fortawesome/free-solid-svg-icons';
 import { trackWhatsAppClick } from '@/lib/analytics';
+import FAQSchema from '../components/FAQSchema';
 
 export default function Tratamentos() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -114,24 +115,28 @@ export default function Tratamentos() {
       answer: 'Com técnicas modernas e anestesia adequada, o tratamento de canal não é mais doloroso do que uma restauração comum. Nossa prioridade é garantir seu conforto durante todo o procedimento.'
     },
     {
-      question: 'Quanto tempo dura um tratamento de canal?',
-      answer: 'A maioria dos tratamentos de canal pode ser concluída em uma ou duas consultas, dependendo da complexidade do caso. Cada consulta geralmente dura entre 60 e 90 minutos.'
-    },
-    {
-      question: 'Qual é a alternativa ao tratamento de canal?',
-      answer: 'A principal alternativa é a extração do dente. No entanto, remover um dente sem substituí-lo pode levar a problemas, como deslocamento dos dentes adjacentes e dificuldade na mastigação. Sempre recomendamos salvar o dente natural quando possível.'
+      question: 'Quanto tempo leva um tratamento de canal?',
+      answer: 'Preconizamos uma sessão única para o tratamento. No entanto, nem todos os casos permitem isso — a duração pode variar de acordo com a complexidade de cada dente e as condições individuais de cada paciente.'
     },
     {
       question: 'Quanto custa um tratamento de canal?',
-      answer: 'O custo varia dependendo da complexidade do caso e do dente afetado. Fornecemos um plano de tratamento detalhado com estimativa de custos antes de iniciar qualquer procedimento. Trabalhamos com os principais convênios e oferecemos opções de pagamento.'
+      answer: 'O custo é variável. Fornecemos um plano de tratamento detalhado com estimativa de custos antes de iniciar qualquer procedimento, além de oferecermos opções de pagamento acessíveis.'
+    },
+    {
+      question: 'O que é o tratamento de canal?',
+      answer: 'O tratamento de canal é um procedimento para remover a polpa inflamada ou infectada de dentro do dente (o "canal"), limpar essa região e selá-la para evitar novas infecções. É uma forma eficaz de salvar o dente natural, evitando a extração.'
     }
   ];
 
   return (
-    <Layout
-      title="Tratamentos Endodônticos"
-      description="Conheça nossos tratamentos endodônticos especializados: tratamento de canal, retratamento e cirurgia apical. Resultados seguros e duradouros."
-    >
+    <>
+      <FAQSchema faqs={faqs} />
+      <Layout
+        title="Tratamentos Endodônticos"
+        description="Conheça nossos tratamentos endodônticos especializados em Sorocaba: tratamento de canal, retratamento e cirurgia apical. Resultados seguros e duradouros."
+        keywords="tratamentos endodônticos Sorocaba, tratamento de canal Sorocaba, retratamento endodôntico, cirurgia apical, endodontia Sorocaba"
+        canonical="https://brunatorelli.com.br/tratamentos/"
+      >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
         <div className="absolute inset-0 bg-black/10"></div>
@@ -439,7 +444,8 @@ export default function Tratamentos() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }
 

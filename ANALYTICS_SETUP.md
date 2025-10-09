@@ -198,3 +198,4 @@ Para dúvidas sobre a implementação:
 **✅ O sistema de analytics está pronto para uso!**
 
 Configure as variáveis de ambiente e comece a coletar dados sobre o comportamento dos visitantes do site.
+

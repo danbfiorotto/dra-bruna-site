@@ -7,6 +7,7 @@ export default function TermosUso() {
     <Layout
       title="Termos de Uso"
       description="Conheça os termos e condições de uso dos serviços da Dra. Bruna. Transparência e clareza em nossos serviços."
+      canonical="https://brunatorelli.com.br/termos-uso/"
     >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>

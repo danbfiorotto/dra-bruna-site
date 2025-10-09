@@ -61,7 +61,9 @@ export default function Contato() {
   return (
     <Layout
       title="Contato - Agende sua Consulta"
-      description="Entre em contato com a Dra. Bruna Torelli Soares para agendar sua consulta de endodontia. WhatsApp, telefone, e-mail ou visite nossa clínica em Sorocaba."
+      description="Entre em contato com a Dra. Bruna Torelli Soares para agendar sua consulta de endodontia em Sorocaba. WhatsApp, telefone, e-mail ou visite nossa clínica."
+      keywords="contato Dra. Bruna, agendar consulta Sorocaba, endodontista contato, WhatsApp endodontia, clínica Sorocaba"
+      canonical="https://brunatorelli.com.br/contato/"
     >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>

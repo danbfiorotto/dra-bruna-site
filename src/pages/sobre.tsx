@@ -81,7 +81,9 @@ export default function Sobre() {
   return (
     <Layout
       title="Sobre a Dra. Bruna Torelli Soares"
-      description="Conheça a trajetória, formação e abordagem humanizada da Dra. Bruna Torelli Soares, especialista em endodontia."
+      description="Conheça a trajetória, formação e abordagem humanizada da Dra. Bruna Torelli Soares, especialista em endodontia em Sorocaba-SP."
+      keywords="Dra. Bruna Torelli, endodontista Sorocaba, especialista em endodontia, formação São Leopoldo Mandic, dentista Sorocaba"
+      canonical="https://brunatorelli.com.br/sobre/"
     >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>

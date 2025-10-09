@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -82,7 +83,7 @@ export default function Blog() {
       date: '2024-01-15',
       readTime: '5 min',
       category: 'Para Pacientes',
-      image: '/images/blog/tratamento-canal-dor.jpg',
+      image: '/images/blog/tratamento-canal-paciente-sorridente-consultorio-odontologico.png',
       featured: true
     },
     {
@@ -94,7 +95,7 @@ export default function Blog() {
       date: '2024-01-10',
       readTime: '4 min',
       category: 'Para Pacientes',
-      image: '/images/blog/endodontista.jpg',
+      image: '/images/blog/estrutura-interna-dente-corte-anatomia-endodontia.png',
       featured: false
     },
     {
@@ -106,7 +107,7 @@ export default function Blog() {
       date: '2024-01-05',
       readTime: '6 min',
       category: 'Para Pacientes',
-      image: '/images/blog/o-que-e-canal.jpg',
+      image: '/images/blog/anatomia-interna-dente-vasos-nervos-polpa-endodontia.png',
       featured: false
     },
     {
@@ -118,7 +119,7 @@ export default function Blog() {
       date: '2023-12-28',
       readTime: '4 min',
       category: 'Para Pacientes',
-      image: '/images/blog/salvar-dente.jpg',
+      image: '/images/blog/dente-extraido-pinça-odontologica-anatomia-dental.png',
       featured: false
     },
     {
@@ -130,7 +131,7 @@ export default function Blog() {
       date: '2023-12-20',
       readTime: '7 min',
       category: 'Para Profissionais',
-      image: '/images/blog/instrumentacao-mecanizada.jpg',
+      image: '/images/blog/limas-endodonticas-instrumentos-rotatorios-endodontia.png',
       featured: false
     },
     {
@@ -142,7 +143,7 @@ export default function Blog() {
       date: '2023-12-15',
       readTime: '6 min',
       category: 'Para Profissionais',
-      image: '/images/blog/tecnologia-endodontia.jpg',
+      image: '/images/blog/dentista-planejamento-digital-exame-tomografia-odontologia.png',
       featured: false
     },
     {
@@ -154,7 +155,7 @@ export default function Blog() {
       date: '2023-12-10',
       readTime: '4 min',
       category: 'Para Pacientes',
-      image: '/images/blog/cuidados-pos-canal.jpg',
+      image: '/images/blog/dentista-consulta-paciente-sorridente-atendimento-humanizado.png',
       featured: false
     },
     {
@@ -166,7 +167,7 @@ export default function Blog() {
       date: '2023-12-05',
       readTime: '8 min',
       category: 'Para Profissionais',
-      image: '/images/blog/tecnicas-manuais-rotatorias.jpg',
+      image: '/images/blog/limas-endodonticas-manuais-vs-rotatorias-instrumentos-endodontia.png',
       featured: false
     }
   ];
@@ -181,7 +182,9 @@ export default function Blog() {
   return (
     <Layout
       title="Blog - Artigos sobre Endodontia e Saúde Bucal"
-      description="Acompanhe artigos especializados sobre endodontia, tratamentos de canal e saúde bucal. Conteúdo educativo da Dra. Bruna Torelli Soares, especialista em endodontia."
+      description="Acompanhe artigos especializados sobre endodontia, tratamentos de canal e saúde bucal. Conteúdo educativo da Dra. Bruna Torelli Soares, especialista em endodontia em Sorocaba."
+      keywords="blog endodontia, artigos saúde bucal, tratamento de canal blog, endodontia Sorocaba, Dra. Bruna blog"
+      canonical="https://brunatorelli.com.br/blog/"
     >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
@@ -243,11 +246,14 @@ export default function Blog() {
             
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="bg-gray-100 h-64 lg:h-auto flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gold/20 rounded-lg mx-auto mb-4"></div>
-                    <div className="text-sm text-gray-600">Imagem do artigo</div>
-                  </div>
+                <div className="relative h-64 lg:h-auto">
+                  <Image 
+                    src={featuredArticle.image} 
+                    alt={featuredArticle.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <div className="flex items-center space-x-2 mb-4">
@@ -324,11 +330,14 @@ export default function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.filter(article => !article.featured).map((article) => (
               <Card key={article.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
-                <div className="bg-gray-100 h-48 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-gold/20 rounded-lg mx-auto mb-2"></div>
-                    <div className="text-xs text-gray-600">Imagem do artigo</div>
-                  </div>
+                <div className="relative h-48 overflow-hidden">
+                  <Image 
+                    src={article.image} 
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 
                 <CardContent className="p-6">
@@ -427,6 +436,17 @@ export default function Blog() {
                         O <strong>tratamento de canal</strong> é um dos procedimentos mais temidos pelos pacientes. Mas será que ele realmente dói? Graças aos avanços na endodontia e à anestesia moderna, o canal deixou de ser sinônimo de dor e passou a ser uma solução segura para salvar dentes comprometidos.
                       </p>
                       
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/tratamento-canal-paciente-sorridente-consultorio-odontologico.png" 
+                          alt="Dentista realizando atendimento odontológico em consultório moderno, com paciente relaxada e sorridente na cadeira."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Tratamento odontológico realizado por profissional especializada em ambiente moderno e acolhedor."
+                        />
+                      </div>
+                      
                       <h3 className="text-xl font-semibold mb-4 text-black">Mitos e Verdades</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Mito:</strong> O canal sempre causa dor.</li>
@@ -460,6 +480,17 @@ export default function Blog() {
                         Muitos pacientes não sabem quando é hora de procurar o especialista em canais. O <strong>endodontista</strong> é o dentista responsável por tratar a polpa do dente e os canais radiculares.
                       </p>
                       
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/estrutura-interna-dente-corte-anatomia-endodontia.png" 
+                          alt="Ilustração anatômica em corte de um dente humano mostrando esmalte, dentina, polpa e canais radiculares."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Anatomia interna do dente com destaque para os canais radiculares."
+                        />
+                      </div>
+                      
                       <h3 className="text-xl font-semibold mb-4 text-black">Diferença entre clínico geral e endodontista</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Clínico geral:</strong> Atua em todas as áreas, mas pode encaminhar casos complexos.</li>
@@ -489,6 +520,17 @@ export default function Blog() {
                       <p className="mb-6 text-lg text-gray-700">
                         O <strong>tratamento de canal</strong> é um procedimento odontológico que visa salvar dentes com inflamação ou infecção na polpa dental.
                       </p>
+                      
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/anatomia-interna-dente-vasos-nervos-polpa-endodontia.png" 
+                          alt="Ilustração anatômica em corte de um dente humano mostrando esmalte, dentina, polpa dentária com vasos sanguíneos e nervos."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Anatomia interna do dente com destaque para polpa, vasos sanguíneos e nervos."
+                        />
+                      </div>
                       
                       <h3 className="text-xl font-semibold mb-4 text-black">O que acontece dentro do dente</h3>
                       <p className="mb-6">A polpa é o tecido vivo do dente. Quando está comprometida, precisa ser removida para evitar a perda do dente e o avanço da infecção.</p>
@@ -521,6 +563,17 @@ export default function Blog() {
                         Muitos pacientes acreditam que extrair um dente com problema é mais fácil, mas a extração pode trazer consequências sérias.
                       </p>
                       
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/dente-extraido-pinça-odontologica-anatomia-dental.png" 
+                          alt="Dente humano extraído sendo segurado por pinça odontológica em ambiente clínico."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Dente extraído segurado por pinça odontológica."
+                        />
+                      </div>
+                      
                       <h3 className="text-xl font-semibold mb-4 text-black">Vantagens de manter o dente natural</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li>Preserva a estética do sorriso.</li>
@@ -548,6 +601,17 @@ export default function Blog() {
                         A <strong>instrumentação mecanizada</strong> transformou a prática endodôntica, revolucionando a forma como os canais radiculares são preparados.
                       </p>
                       
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/limas-endodonticas-instrumentos-rotatorios-endodontia.png" 
+                          alt="Limas endodônticas e instrumentos rotatórios modernos utilizados em tratamentos de canal."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Instrumentos endodônticos modernos para tratamento de canal."
+                        />
+                      </div>
+                      
                       <h3 className="text-xl font-semibold mb-4 text-black">Principais benefícios</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li>Redução significativa do tempo clínico.</li>
@@ -570,6 +634,17 @@ export default function Blog() {
                       <p className="mb-6 text-lg text-gray-700">
                         A <strong>tecnologia ampliou a precisão e previsibilidade</strong> dos tratamentos endodônticos, revolucionando o diagnóstico e planejamento.
                       </p>
+                      
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/dentista-planejamento-digital-exame-tomografia-odontologia.png" 
+                          alt="Dentista realizando planejamento digital com exame de tomografia computadorizada em consultório odontológico moderno."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Planejamento digital com tomografia computadorizada em endodontia."
+                        />
+                      </div>
                       
                       <h3 className="text-xl font-semibold mb-4 text-black">Radiografia Digital</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">
@@ -598,6 +673,17 @@ export default function Blog() {
                         Após o <strong>tratamento de canal</strong>, alguns cuidados simples garantem a cicatrização e a durabilidade do procedimento.
                       </p>
                       
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/dentista-consulta-paciente-sorridente-atendimento-humanizado.png" 
+                          alt="Dentista realizando consulta com paciente sorridente em ambiente de atendimento humanizado e acolhedor."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Atendimento humanizado e acolhedor em consultório odontológico."
+                        />
+                      </div>
+                      
                       <h3 className="text-xl font-semibold mb-4 text-black">Alimentação adequada</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li>Prefira alimentos macios nos primeiros dias.</li>
@@ -622,6 +708,17 @@ export default function Blog() {
                       <p className="mb-6 text-lg text-gray-700">
                         Apesar do avanço tecnológico, as <strong>técnicas manuais</strong> ainda têm indicações específicas na endodontia moderna.
                       </p>
+                      
+                      <div className="mb-8">
+                        <Image 
+                          src="/images/blog/limas-endodonticas-manuais-vs-rotatorias-instrumentos-endodontia.png" 
+                          alt="Comparação entre limas endodônticas manuais e rotatórias, mostrando diferentes instrumentos utilizados em endodontia."
+                          width={800}
+                          height={600}
+                          className="rounded-lg shadow-lg w-full h-auto"
+                          title="Instrumentos endodônticos: comparação entre técnicas manuais e rotatórias."
+                        />
+                      </div>
                       
                       <h3 className="text-xl font-semibold mb-4 text-black">Técnicas manuais</h3>
                       <ul className="list-disc pl-6 mb-6 space-y-2">

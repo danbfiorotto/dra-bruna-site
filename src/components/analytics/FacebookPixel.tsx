@@ -123,3 +123,4 @@ export const trackCompleteRegistration = (method: string) => {
     content_category: 'dental_consultation',
   });
 };
+

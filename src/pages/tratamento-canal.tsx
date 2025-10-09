@@ -122,7 +122,9 @@ export default function TratamentoCanal() {
   return (
     <Layout
       title="Tratamento de Canal - Dra. Bruna Torelli Soares"
-      description="Tratamento de canal especializado. Preserve seu dente natural com a Dra. Bruna Torelli Soares, especialista em endodontia."
+      description="Tratamento de canal especializado em Sorocaba. Preserve seu dente natural com a Dra. Bruna Torelli Soares, especialista em endodontia."
+      keywords="tratamento de canal Sorocaba, endodontia Sorocaba, canal dentário, preservar dente, Dra. Bruna canal"
+      canonical="https://brunatorelli.com.br/tratamento-canal/"
     >
       {/* Hero Section */}
       <section className="h-[500px] sm:h-[600px] bg-black/70 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: 'url(/images/dentist-profile2.jpeg)'}}>

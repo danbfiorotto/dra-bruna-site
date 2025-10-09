@@ -8,6 +8,7 @@ import {
   Award,
   Users
 } from 'lucide-react';
+import ReviewSchema from '../components/ReviewSchema';
 
 export default function Depoimentos() {
   const handleWhatsApp = () => {
@@ -85,11 +86,26 @@ export default function Depoimentos() {
     { label: 'Anos de Experiência', value: '5+', icon: <Award className="w-6 h-6" /> }
   ];
 
+  // Converter testimonials para formato de review
+  const reviews = testimonials.map((testimonial) => ({
+    id: testimonial.id.toString(),
+    author: testimonial.name,
+    rating: testimonial.rating,
+    reviewBody: testimonial.text,
+    datePublished: new Date().toISOString().split('T')[0], // Data atual como fallback
+    treatment: testimonial.treatment,
+    location: testimonial.location
+  }));
+
   return (
-    <Layout
-      title="Depoimentos de Pacientes"
-      description="Veja o que nossos pacientes dizem sobre os tratamentos endodônticos da Dra. Bruna Torelli Soares. Depoimentos reais de quem confiou em nosso trabalho."
-    >
+    <>
+      <ReviewSchema reviews={reviews} />
+      <Layout
+        title="Depoimentos de Pacientes"
+        description="Veja o que nossos pacientes dizem sobre os tratamentos endodônticos da Dra. Bruna Torelli Soares em Sorocaba. Depoimentos reais de quem confiou em nosso trabalho."
+        keywords="depoimentos Dra. Bruna, avaliações endodontia, pacientes satisfeitos Sorocaba, opiniões tratamento de canal"
+        canonical="https://brunatorelli.com.br/depoimentos/"
+      >
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -210,7 +226,8 @@ export default function Depoimentos() {
           </Button>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }
 

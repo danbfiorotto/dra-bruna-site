@@ -107,3 +107,4 @@ export const trackPageView = (pageName: string, pagePath: string) => {
     page_location: window.location.href,
   });
 };
+

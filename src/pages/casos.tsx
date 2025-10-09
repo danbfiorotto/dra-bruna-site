@@ -90,8 +90,10 @@ export default function Casos() {
 
   return (
     <Layout
-      title="Casos Antes e Depois"
-      description="Veja os resultados reais dos tratamentos estéticos da Dra. Bruna. Casos de Botox, preenchimento, laser e muito mais."
+      title="Casos Antes e Depois - Tratamentos Endodônticos"
+      description="Veja os resultados reais dos tratamentos endodônticos da Dra. Bruna Torelli Soares. Casos de tratamento de canal e retratamento endodôntico."
+      keywords="casos antes e depois endodontia, resultados tratamento de canal, casos Dra. Bruna, endodontia Sorocaba resultados"
+      canonical="https://brunatorelli.com.br/casos/"
     >
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 sm:py-20">

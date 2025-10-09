@@ -78,7 +78,9 @@ export default function Home() {
   return (
     <Layout
       title="Dra. Bruna Torelli Soares - Especialista em Endodontia"
-      description="Dra. Bruna Torelli Soares é especialista em endodontia, oferecendo tratamentos de canal com tecnologia de ponta e abordagem humanizada. Agende sua consulta."
+      description="Dra. Bruna Torelli Soares é especialista em endodontia em Sorocaba-SP, oferecendo tratamentos de canal com tecnologia de ponta e abordagem humanizada. Agende sua consulta."
+      keywords="endodontia Sorocaba, tratamento de canal Sorocaba, Dra. Bruna Torelli, endodontista Sorocaba, retratamento endodôntico, especialista em canal"
+      canonical="https://brunatorelli.com.br/"
     >
       {/* Hero Section */}
       <section className="h-[400px] sm:h-[500px] bg-cover bg-no-repeat relative" style={{backgroundImage: 'url(/images/banner.png)', backgroundPosition: 'center'}}>
@@ -99,8 +101,8 @@ export default function Home() {
               
               {/* Descrição */}
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl">
-                Tratamentos de canal com excelência, tecnologia de ponta e compromisso 
-                com o seu bem-estar. Especialista em Endodontia, trazendo resultados precisos e mais confortáveis.
+                Tratamentos de canal em Sorocaba com excelência, tecnologia de ponta e compromisso 
+                com o seu bem-estar. Especialista em Endodontia em Sorocaba-SP, trazendo resultados precisos e mais confortáveis.
               </p>
               
               {/* Botões de Ação */}
@@ -146,11 +148,11 @@ export default function Home() {
               </h2>
               <p className="text-gray-700 mb-6">
                 Com uma sólida formação acadêmica e ampla experiência clínica, 
-                a Dra. Bruna Torelli Soares é especialista em endodontia, dedicando-se 
+                a Dra. Bruna Torelli Soares é especialista em endodontia em Sorocaba, dedicando-se 
                 ao diagnóstico e tratamento de problemas relacionados à polpa dental 
                 e à região periapical. Seu trabalho é reconhecido pela precisão, uso 
                 de tecnologias avançadas e pelo compromisso em proporcionar um 
-                atendimento humanizado e de excelência aos seus pacientes.
+                atendimento humanizado e de excelência aos seus pacientes em Sorocaba-SP.
               </p>
               <Button 
                 variant="outline"
@@ -173,8 +175,8 @@ export default function Home() {
             </h2>
             <div className="w-16 sm:w-20 h-1 bg-gold mx-auto mb-8 sm:mb-12"></div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Oferecemos uma gama completa de tratamentos endodônticos com tecnologia 
-              de ponta.
+              Oferecemos uma gama completa de tratamentos endodônticos em Sorocaba com tecnologia 
+              de ponta. Especialista em endodontia em Sorocaba-SP.
             </p>
           </div>
 
@@ -250,7 +252,8 @@ export default function Home() {
           </h2>
           <p className="text-lg sm:text-xl text-white mb-8 max-w-2xl mx-auto">
             Não deixe que problemas dentários afetem sua qualidade de vida. 
-            Entre em contato hoje mesmo e agende uma avaliação com a Dra. Bruna Torelli Soares.
+            Entre em contato hoje mesmo e agende uma avaliação com a Dra. Bruna Torelli Soares, 
+            especialista em endodontia em Sorocaba.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
